@@ -1,0 +1,8 @@
+.star-rating-filled {
+  color: #f39c12;
+  background: #000;
+}
+
+.star-rating-empty {
+  color: #bdc3c7;
+}
