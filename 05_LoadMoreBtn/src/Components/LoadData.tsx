@@ -17,6 +17,12 @@ function LoadData() {
         const data = await res.data
         if(data && data.products && data.products.length > 0){
           setProducts((prevData) => [...prevData, ...data.products]);
+          if(data.products.length < 20){
+            setDisablebtn(true)
+            setLoading(false);
+          } else {
+            setDisablebtn(false)
+          }
           setLoading(false);
         }
         } catch (error) {
@@ -30,7 +36,7 @@ function LoadData() {
     }, [count])
     
     useEffect(() => {
-      if(products && products.length > 0){
+      if(products && products.length === 100){
         setDisablebtn(true)
     }}, [products])
     
